@@ -1,0 +1,7 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= @gossip.title %></h5>
+    <p class="card-text">Content: <%= @gossip.content %></p>
+    <div>Author: <%= link_to @gossip.user.first_name, user_path(@gossip.user.id), class:"card-text"%></div>
+  </div>
+</div>
