@@ -1,7 +1,7 @@
 require 'faker'
 
 # Create cities
-10.times do |i|
+5.times do |i|
   City.create!(
   name: Faker::Address.city, 
   zip_code: Faker::Address.zip_code
@@ -9,21 +9,24 @@ require 'faker'
 end
 
 # Create users associated with cities
-10.times do |i|
+6.times do |i|
+  first_name = Faker::Name.first_name 
+  last_name = Faker::Name.last_name
+  
   User.create!(
-    first_name: Faker::Name.first_name, 
-    last_name: Faker::Name.last_name, 
-    email: Faker::Internet.email, 
+    first_name: first_name, 
+    last_name: last_name, 
+    email: "#{first_name.downcase}.#{last_name.downcase}@gmail.com", 
     age: Faker::Number.between(from: 10, to: 30),
     city_id: City.all.sample.id
   )
 end
 
 # Create gossips associated with a user
-20.times do |i|
+10.times do |i|
   Gossip.create!(
-    title: Faker::Lorem.sentence(word_count: 3),
-    content: Faker::Lorem.paragraph(sentence_count: 3),
+    title: Faker::Book.title,
+    content: Faker::Quote.matz,
     user_id: User.all.sample.id
   )
 end

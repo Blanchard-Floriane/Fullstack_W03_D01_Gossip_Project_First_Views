@@ -7,9 +7,22 @@
   color: #feffff;
 }
 
+.btn_white {
+  background-color: #feffff;
+  color: #000000;
+}
+
 .btn-pink {
   background-color: #feffff;
   color: #000000;
   border: none;
   box-shadow: 0 0 0 3px #ff007f; /* Couleur rose fluo pour la bordure */
+}
+
+.gossip_card_border {
+  border: none;
+}
+
+.txt-white {
+  color: #feffff;
 }
